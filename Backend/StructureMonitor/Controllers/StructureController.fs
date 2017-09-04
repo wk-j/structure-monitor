@@ -48,8 +48,10 @@ type StructureController () =
 
     [<HttpPost>]
     member this.GetStructures([<FromBody>] req: Requery) = 
-        if Directory.Exists req.Path then
+        if req.Path = "/" then
+            Folder(Name="</>")
+        elif Directory.Exists req.Path then
             let str = Folder()
             query str req.Path
         else
-            Folder(Name="...")
+            Folder(Name="<Empty>")

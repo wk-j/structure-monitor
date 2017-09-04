@@ -9,8 +9,8 @@ open Microsoft.AspNetCore.Hosting
 open Microsoft.Extensions.Configuration
 open Microsoft.Extensions.DependencyInjection
 
-
 type Startup private () =
+
     new (configuration: IConfiguration) as this =
         Startup() then
         this.Configuration <- configuration

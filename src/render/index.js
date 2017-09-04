@@ -55,7 +55,7 @@ export class App extends React.Component {
     file(item) {
         return (
             <div className="item" key={item.fullName}>
-                <i className="file icon"></i>
+                <i className="houzz icon"></i>
                 <div className="content">
                     <div className="header">{item.name}</div>
                     {/* <div className="description">Config file for setting packaged themes</div> */}

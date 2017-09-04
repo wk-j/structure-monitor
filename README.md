@@ -14,4 +14,14 @@ dotnet watch run
 
 # create release
 dotnet publish -c release -r osx.10.12-x64 -o ../../dist/backend /p:LinkDuringPublish=false backend/StructureMonitor
+
+# prunce
+yarn install --production --ignore-scripts --prefer-offline
+
+npm run mac-package
+npm run mac-dmg
+
+# prune
+npm prune --production
+yarn run mac-package
 ```
