@@ -8,7 +8,7 @@ var win;
 function createWindow() {
     win = new electron.BrowserWindow({ 
         width: 800, 
-        height: 600,  
+        height: 1000,  
         titleBarStyle: "visible" }
     );
     win.loadURL(url.format({
