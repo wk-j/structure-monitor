@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "moduleResolution": "node",
+        "module": "commonjs",
+        "target": "ES2015",
+        "jsx": "react",
+        "allowJs": true,
+        "noImplicitAny": false
+    },
+    "exclude": [
+        "node_modules"
+    ],
+    "compileOnSave": true
+}
