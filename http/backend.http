@@ -1,0 +1,6 @@
+POST http://localhost:5000/api/structure/getStructures
+content-type: application/json
+
+{
+    "path": "/Users/wk/Source/project/structure-monitor/backend"
+}
