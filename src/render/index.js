@@ -6,7 +6,7 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { observable, action } from "mobx";
 import { observer } from "mobx-react";
-import { getCurrentDir } from "./utility";
+import { getCurrentDir, startBackend } from "./utility";
 
 export class Structure {
     name = "";
@@ -28,6 +28,8 @@ export class Model {
     });
 }
 
+startBackend();
+
 let model = new Model();
 
 setInterval(() => {
@@ -36,6 +38,8 @@ setInterval(() => {
         model.structure = rs.data;
     });
 }, 1000);
+
+
 
 @observer
 export class App extends React.Component {
