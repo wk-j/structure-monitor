@@ -39,8 +39,6 @@ setInterval(() => {
     });
 }, 1000);
 
-
-
 @observer
 export class App extends React.Component {
 
@@ -55,7 +53,7 @@ export class App extends React.Component {
     file(item) {
         return (
             <div className="item" key={item.fullName}>
-                <i className="houzz icon"></i>
+                <i className="spotify icon"></i>
                 <div className="content">
                     <div className="header">{item.name}</div>
                     {/* <div className="description">Config file for setting packaged themes</div> */}
@@ -70,7 +68,7 @@ export class App extends React.Component {
                 <i className="cube icon"></i>
                 <div className="content">
                     <div className="header">{str.name}</div>
-                    <div className="description">{str.folders.length} folders {str.files.length} files -- {str.fullName} </div>
+                    <div className="description">{str.folders.length} - {str.files.length} {str.fullName}</div>
                     <div className="list">
                         {str.files.map(x => this.file(x))}
                         {str.folders.map(x => this.folder(x))}
@@ -93,15 +91,10 @@ export class App extends React.Component {
             top: 0,
             paddingTop: "10px",
             paddingBottom: "10px",
-            width: "100%",
-            overflow: "hidden",
+            paddingRight: "30px",
             position: "fixed",
             backgroundColor: "white",
             width: "100%",
-        }
-
-        let topStyle = {
-
         }
 
         let bottomStyle = {
@@ -109,10 +102,10 @@ export class App extends React.Component {
         }
 
         return (
-            <div>
+            <div className="ui basic segment">
                 <div style={mainStyle}>
-                    <div className="ui left icon input" style={topStyle}>
-                        <input type="text" size="80" placeholder="" value={path} onChange={e => this.handleChange(e)} />
+                    <div className="ui left fluid icon input">
+                        <input type="text" placeholder="" value={path} onChange={e => this.handleChange(e)} />
                         <i className="ui folder icon"/>
                     </div>
                 </div>
@@ -121,7 +114,7 @@ export class App extends React.Component {
                         <i className="cube icon"></i>
                         <div className="content">
                             <div className="header">{str.name}</div>
-                            <div className="description">{str.folders.length} folders {str.files.length} files -- {str.fullName}</div>
+                            <div className="description">{str.folders.length} - {str.files.length} {str.fullName}</div>
                             <div className="list">
                                 {str.files.map(x => this.file(x))}
                                 {str.folders.map(x => this.folder(x))}
